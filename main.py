@@ -25,23 +25,19 @@ async def lifespan(app: FastAPI):
         port=CONFIG["VDB_PORT"]
     )
 
-    app.state.fr_card_col, app.state.fr_word_col, app.state.en_card_col, app.state.en_card_col = setupCols()
+    app.state.fr_card_col, app.state.fr_word_col, app.state.en_card_col, app.state.en_word_col = setupCols()
 
     app.state.transformerModel = SentenceTransformer(CONFIG["TRANSFORMER_MODEL"])
 
     yield
 
-    if not pymilvus.connections.has_connection(CONFIG["VDB_ALIAS"]):
-        return
-
     app.state.fr_card_col.flush()
-    app.state.fr_card_col.release()
     app.state.fr_word_col.flush()
-    app.state.fr_word_col.release()
-
     app.state.en_card_col.flush()
-    app.state.en_card_col.release()
     app.state.en_word_col.flush()
+    app.state.fr_card_col.release()
+    app.state.fr_word_col.release()
+    app.state.en_card_col.release()
     app.state.en_word_col.release()
 
     pymilvus.connections.disconnect(CONFIG["VDB_ALIAS"])

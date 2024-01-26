@@ -2,14 +2,14 @@ from pymilvus import DataType, FieldSchema, CollectionSchema
 
 # English schemas for cards and words
 en_cardid = FieldSchema(
-    name="en_cardid",
+    name="cardid",
     dtype=DataType.VARCHAR,
     max_length=200,
     is_primary=True,
 )
 
 en_card = FieldSchema(
-    name="en_card",
+    name="card",
     dtype=DataType.FLOAT_VECTOR,
     dim=1024,
 )
@@ -21,14 +21,14 @@ en_card_schema = CollectionSchema(
 
 
 en_wordid = FieldSchema(
-    name="en_wordid",
+    name="wordid",
     dtype=DataType.VARCHAR,
     max_length=200,
     is_primary=True,
 )
 
 en_word = FieldSchema(
-    name="en_word",
+    name="word",
     dtype=DataType.FLOAT_VECTOR,
     dim=1024,
 )
@@ -40,14 +40,14 @@ en_word_schema = CollectionSchema(
 
 # french schemas for cards and words
 fr_cardid = FieldSchema(
-    name="fr_cardid",
+    name="cardid",
     dtype=DataType.VARCHAR,
     max_length=200,
     is_primary=True,
 )
 
 fr_card = FieldSchema(
-    name="fr_card",
+    name="card",
     dtype=DataType.FLOAT_VECTOR,
     dim=1024,
 )
@@ -59,14 +59,14 @@ fr_card_schema = CollectionSchema(
 
 
 fr_wordid = FieldSchema(
-    name="fr_wordid",
+    name="wordid",
     dtype=DataType.VARCHAR,
     max_length=200,
     is_primary=True,
 )
 
 fr_word = FieldSchema(
-    name="fr_word",
+    name="word",
     dtype=DataType.FLOAT_VECTOR,
     dim=1024,
 )

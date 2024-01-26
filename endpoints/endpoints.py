@@ -22,7 +22,7 @@ async def addFrWord(request: Request, word: FrWord) -> Dict:
 
 @router.post("/recommendFrCard")
 async def recommendFrCard(request: Request, card_history: CardHistory) -> List:
-    return service.recommendCards(card_history, request.app.state.en_card_col, request.app.state.transformerModel)
+    return service.recommendCards(card_history, request.app.state.fr_card_col, request.app.state.transformerModel)
 
 # English
 @router.post("/addEnCard")

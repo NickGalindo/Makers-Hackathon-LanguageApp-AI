@@ -24,7 +24,7 @@ def setupCols() -> Tuple[Collection, Collection, Collection, Collection]:
             schema=fr_card_schema,
             using=CONFIG["VDB_ALIAS"]
         )
-        fr_card_col.create_index(field_name="fr_card", index_params=index_params)
+        fr_card_col.create_index(field_name="card", index_params=index_params)
     else:
         fr_card_col = Collection("fr_card")
 
@@ -37,7 +37,7 @@ def setupCols() -> Tuple[Collection, Collection, Collection, Collection]:
             schema=fr_word_schema,
             using=CONFIG["VDB_ALIAS"]
         )
-        fr_word_col.create_index(field_name="fr_word", index_params=index_params)
+        fr_word_col.create_index(field_name="word", index_params=index_params)
     else:
         fr_word_col = Collection("fr_word")
 
@@ -51,7 +51,7 @@ def setupCols() -> Tuple[Collection, Collection, Collection, Collection]:
             schema=en_card_schema,
             using=CONFIG["VDB_ALIAS"]
         )
-        en_card_col.create_index(field_name="en_card", index_params=index_params)
+        en_card_col.create_index(field_name="card", index_params=index_params)
     else:
         en_card_col = Collection("en_card")
 
@@ -64,7 +64,7 @@ def setupCols() -> Tuple[Collection, Collection, Collection, Collection]:
             schema=en_word_schema,
             using=CONFIG["VDB_ALIAS"]
         )
-        en_word_col.create_index(field_name="en_word", index_params=index_params)
+        en_word_col.create_index(field_name="word", index_params=index_params)
     else:
         en_word_col = Collection("en_word")
 

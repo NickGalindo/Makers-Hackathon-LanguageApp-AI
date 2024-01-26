@@ -25,6 +25,7 @@ def __checkCardExistence(card: Dict, col: Collection):
     return None
 
 def addCard(card: Dict, col: Collection, model: SentenceTransformer):
+    print(col.schema)
     if __checkCardExistence(card, col):
         return 
 
